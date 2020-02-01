@@ -3,8 +3,28 @@ body {
 }
 
 #root {
+  background-color: grey;
   height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+}
+
+.clicked {
+  background-color: red;
+  height: 70vh;
+}
+
+
+.container {
+  background-color: yellow;
+}
+
+.first-div {
+  color: blue;
+  width: 75%;
+  background-color: lightblue;
+}
+
+.second-div {
+  color: orange;
+  width: 50%;
+  background-color: lightgreen;
 }
