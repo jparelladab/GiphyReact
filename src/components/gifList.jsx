@@ -5,18 +5,12 @@ class GifList extends Component {
   constructor(props) {
     super(props);
     this.state = {};
-    this.renderGifs = this.props.gifs.map((id) => {
-      return <Gif type="side-gifs" id={id} key={id} />;
-    });
   }
 
-
   render() {
-    return this.renderGifs;
-
-    // return this.props.gifs.forEach((gif) => {
-    //   return <Gif id={gif} type="side-gifs" key={gif} />;
-    // });
+    return this.props.gifsArr.map((gif) => {
+      return <Gif type="side-gifs" id={gif.id} key={gif.id} clickEvent={this.props.clickFunction} />;
+    });
   }
 }
 
