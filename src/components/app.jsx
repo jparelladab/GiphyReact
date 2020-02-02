@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Gif from './gif';
 import GifList from './gifList';
+import SearchBar from './searchBar';
 
 class App extends Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class App extends Component {
     return (
       <div className="container">
         <div className="first-div">
-          <input className="search-bar" />
+          <SearchBar />
           <Gif type="chosen-img" id={this.state.selectedGifId} />
         </div>
         <div className="second-div">

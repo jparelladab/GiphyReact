@@ -6,7 +6,7 @@ class GifList extends Component {
     super(props);
     this.state = {};
     this.renderGifs = this.props.gifs.map((id) => {
-      return <Gif type="side-gifs" id={id} />;
+      return <Gif type="side-gifs" id={id} key={id} />;
     });
   }
 

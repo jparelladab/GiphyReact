@@ -1,23 +1,17 @@
-// import React, { Component } from 'react';
-// import Gif from './gif';
+import React, { Component } from 'react';
 
-// class GifList extends Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {};
-//     this.renderGifs = this.props.gifs.map((id) => {
-//       return <Gif type="side-gifs" id={id} />;
-//     });
-//   }
+class SearchBar extends Component {
+  handleUpdate = (event) => {
+    const token = "aAkCjX1viLR7NrnDmcSkOev90IewVt8i";
+    return `http://api.giphy.com/v1/gifs/search?api_key=${token}&q=${event.target.value}`;
+  }
 
 
-//   render() {
-//     return this.renderGifs;
+  render() {
+    return (
+      <input className="search-bar" onChange={this.handleUpdate} />
+    );
+  }
+}
 
-//     // return this.props.gifs.forEach((gif) => {
-//     //   return <Gif id={gif} type="side-gifs" key={gif} />;
-//     // });
-//   }
-// }
-
-// export default GifList;
+export default SearchBar;
