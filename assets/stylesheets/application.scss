@@ -6,25 +6,51 @@ body {
   background-color: grey;
   height: 100vh;
 }
-
-.clicked {
-  background-color: red;
-  height: 70vh;
-}
-
-
 .container {
   background-color: yellow;
+  display: flex;
+  height: 90vh;
+}
+
+.red {
+  background-color: red;
+  height: 100vh;
+}
+
+.green {
+  background-color: green;
+  height: 30vh;
+}
+
+.search-bar {
+  margin: 20% auto;
+  display: block;
+
 }
 
 .first-div {
   color: blue;
   width: 75%;
   background-color: lightblue;
+
 }
 
 .second-div {
+  display: flex;
   color: orange;
   width: 50%;
   background-color: lightgreen;
+  flex-wrap: wrap;
+}
+
+.chosen-img {
+  margin: 20% auto;
+  width: 50%;
+  display: block;
+}
+
+.side-gifs {
+  width: 100px;
+  height: 100px;
+  margin: 10px auto;
 }
