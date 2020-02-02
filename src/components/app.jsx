@@ -5,20 +5,22 @@ import GifList from './gifList';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { clicked: false };
+    this.state = {
+      gifs: ['TI9KWV5a14xcOfU2Xe', 'l4hmIwPexZ9IVSDu0', 'CJbUvNftlDbcQ', 'zBtFBVVo5iZPO', 'xWBADXkEvVJvy', 'Sn2DufoCgRRNS', 'qiWONQdjw33xK', 'xThtaj0S6bX9VQFbSE'],
+      selectedGifId: "TI9KWV5a14xcOfU2Xe"
+    };
   }
 
   render() {
-    const arr = ['TI9KWV5a14xcOfU2Xe', 'l4hmIwPexZ9IVSDu0', 'CJbUvNftlDbcQ', 'zBtFBVVo5iZPO', 'xWBADXkEvVJvy', 'Sn2DufoCgRRNS', 'qiWONQdjw33xK', 'xThtaj0S6bX9VQFbSE'];
     return (
       <div className="container">
         <div className="first-div">
           <input className="search-bar" />
-          <Gif type="chosen-img" />
+          <Gif type="chosen-img" id={this.state.selectedGifId} />
         </div>
-          <div className="second-div">
-            <giphList giphs={arr} />
-          </div>
+        <div className="second-div">
+          <GifList gifs={this.state.gifs} />
+        </div>
       </div>
     );
   }
