@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import giphy from 'giphy-api';
+// import giphy from 'giphy-api';
 import Gif from './gif';
 import GifList from './gifList';
 import SearchBar from './searchBar';
@@ -29,7 +29,8 @@ class App extends Component {
   search = (query) => {
     fetch(`https://api.giphy.com/v1/gifs/search?aAkCjX1viLR7NrnDmcSkOev90IewVt8i&q=${query}&limit=8&api_key=aAkCjX1viLR7NrnDmcSkOev90IewVt8i`)
       .then(resp => resp.json())
-      .then((resp) => { this.setState({ gifs: resp.data }); });
+      .then((resp) => { this.setState({ gifs: resp.data }); })
+      .catch(console.log);
   }
 
   clickGif = (e) => {
