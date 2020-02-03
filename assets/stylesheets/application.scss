@@ -71,7 +71,7 @@ body {
     margin-bottom: 10px;
   }
   .search-bar {
-    margin: 10%;
+    margin: 10vh;
     display: flex;
     justify-content: center;
     input {
@@ -112,6 +112,7 @@ body {
 
   .chosen-img {
     width: 50vh;
+    max-height: 50vh;
   }
 }
 
