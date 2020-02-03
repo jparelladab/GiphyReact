@@ -15,29 +15,21 @@ class App extends Component {
   }
 
   keyword = (e) => {
-    if (e.target.value != '') {
+    if (e.target.value !== '') {
       this.setState({
         keyword: true
       });
-      console.log("hello");
-      console.log(e.target.value);
     } else {
       this.setState({
         keyword: false
       });
-      console.log(e.target.value);
     }
   }
 
   search = (query) => {
-    giphy('aAkCjX1viLR7NrnDmcSkOev90IewVt8i').search({
-      q: query,
-      limit: 8
-    }, (err, res) => {
-      this.setState({
-        gifs: res.data
-      });
-    });
+    fetch(`https://api.giphy.com/v1/gifs/search?aAkCjX1viLR7NrnDmcSkOev90IewVt8i&q=${query}&limit=8&api_key=aAkCjX1viLR7NrnDmcSkOev90IewVt8i`)
+      .then(resp => resp.json())
+      .then((resp) => { this.setState({ gifs: resp.data }); });
   }
 
   clickGif = (e) => {
