@@ -32,7 +32,7 @@ class App extends Component {
   search = (query) => {
     giphy('aAkCjX1viLR7NrnDmcSkOev90IewVt8i').search({
       q: query,
-      limit: 9
+      limit: 8
     }, (err, res) => {
       this.setState({
         gifs: res.data
