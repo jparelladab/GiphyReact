@@ -8,7 +8,13 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <input className="search-bar" onChange={this.handleUpdate} />
+
+      <div className="search-bar">
+        <img src="https://media.giphy.com/media/SpnOZrxjQ94KNzEcWF/giphy.gif" alt="arrow" />
+        <input onChange={this.handleUpdate} />
+        <img className="opposite" src="https://media.giphy.com/media/SpnOZrxjQ94KNzEcWF/giphy.gif" alt="arrow" />
+      </div>
+
     );
   }
 }

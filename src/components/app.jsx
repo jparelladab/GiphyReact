@@ -16,12 +16,11 @@ class App extends Component {
   search = (query) => {
     giphy('aAkCjX1viLR7NrnDmcSkOev90IewVt8i').search({
       q: query,
-      limit: 8
+      limit: 9
     }, (err, res) => {
       this.setState({
         gifs: res.data
       });
-      console.log(this.state.gifs);
     });
   }
 
@@ -37,8 +36,11 @@ class App extends Component {
     return (
       <div className="container">
         <div className="first-div">
+          <img src="https://media.giphy.com/media/OkJat1YNdoD3W/giphy.gif" alt="welcome" />
           <SearchBar searchFunction={this.search} />
-          <Gif type="chosen-img" id={this.state.selectedGifId} />
+          <div className="selectedGif">
+            <Gif type="chosen-img" id={this.state.selectedGifId} />
+          </div>
         </div>
         <div className="second-div">
           <GifList gifsArr={this.state.gifs} clickFunction={this.clickGif} />
