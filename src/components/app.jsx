@@ -9,8 +9,24 @@ class App extends Component {
     super(props);
     this.state = {
       gifs: [],
-      selectedGifId: "TI9KWV5a14xcOfU2Xe"
+      selectedGifId: "TI9KWV5a14xcOfU2Xe",
+      keyword: false
     };
+  }
+
+  keyword = (e) => {
+    if (e.target.value != '') {
+      this.setState({
+        keyword: true
+      });
+      console.log("hello");
+      console.log(e.target.value);
+    } else {
+      this.setState({
+        keyword: false
+      });
+      console.log(e.target.value);
+    }
   }
 
   search = (query) => {
@@ -35,14 +51,14 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <div className="first-div">
+        <div className={this.state.keyword ? "first-div-typed" : "first-div-start"}>
           <img src="https://media.giphy.com/media/OkJat1YNdoD3W/giphy.gif" alt="welcome" />
-          <SearchBar searchFunction={this.search} />
+          <SearchBar searchFunction={this.search} keywordFunction={this.keyword} />
           <div className="selectedGif">
             <Gif type="chosen-img" id={this.state.selectedGifId} />
           </div>
         </div>
-        <div className="second-div">
+        <div className={this.state.keyword ? "second-div-typed" : "second-div-start"}>
           <GifList gifsArr={this.state.gifs} clickFunction={this.clickGif} />
         </div>
       </div>
